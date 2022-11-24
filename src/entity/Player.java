@@ -13,16 +13,29 @@ public class Player extends Entity{
     GamePanel gp;
     KeyHandler keyH;
 
+    public final int screenX;
+    public final int screenY;
+
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
         this.keyH = keyH;
+
+        screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
+        screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+
+        solidArea = new Rectangle();
+        solidArea.x = 8;
+        solidArea.y = 16;
+        solidArea.width = 32;
+        solidArea.width = 32;
+
         setDefaultValues();
         getPlayerImage();
     }
 
     public void setDefaultValues() {
-        x = 100;
-        y = 100;
+        worldX = gp.tileSize * 22;
+        worldY = gp.tileSize * 22;
         speed = 4;
         direction = "down";
     }
@@ -51,34 +64,40 @@ public class Player extends Entity{
     }
 
     public void update() {
-        if (keyH.upPressed == true) {
-            direction = "up";
-            y -= speed;
-        }
-        else if (keyH.downPressed == true) {
-            direction = "down";
-            y += speed;
-        }
-        else if (keyH.leftPressed == true) {
-            direction = "left";
-            x -= speed;
-        }
-        else if (keyH.rightPressed == true) {
-            direction = "right";
-            x += speed;
-        }
-        spriteCounter++;
-        if(spriteCounter > 10) {
-            if (spriteNum == 1) {
-                spriteNum = 2;
-            } else if (spriteNum == 2) {
-                spriteNum = 3;
-            } else if (spriteNum == 3) {
-                spriteNum = 4;
-            } else if (spriteNum == 4) {
-                spriteNum = 1;
+        if (keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true) {
+            if (keyH.upPressed == true) {
+                direction = "up";
+                worldY -= speed;
             }
-            spriteCounter = 0;
+            else if (keyH.downPressed == true) {
+                direction = "down";
+                worldY += speed;
+            }
+            else if (keyH.leftPressed == true) {
+                direction = "left";
+                worldX -= speed;
+            }
+            else if (keyH.rightPressed == true) {
+                direction = "right";
+                worldX += speed;
+            }
+
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            spriteCounter++;
+            if(spriteCounter > 10) {
+                if (spriteNum == 1) {
+                    spriteNum = 2;
+                } else if (spriteNum == 2) {
+                    spriteNum = 3;
+                } else if (spriteNum == 3) {
+                    spriteNum = 4;
+                } else if (spriteNum == 4) {
+                    spriteNum = 1;
+                }
+                spriteCounter = 0;
+            }
         }
     }
     public void draw(Graphics2D g) {
@@ -144,6 +163,6 @@ public class Player extends Entity{
                 }
                 break;
         }
-        g.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
 }
