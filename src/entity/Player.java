@@ -16,8 +16,11 @@ public class Player extends Entity{
 
     public final int screenX;
     public final int screenY;
-    boolean hasBucket = false;
+    boolean hasItem = false;
     String mainHand = "Hands";     // TODO: make a list of all materials
+    // TODO: Might need to find a better way to do this, like inventory class?
+    OBJ_Bucket bucket = new OBJ_Bucket();
+
 
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -63,6 +66,51 @@ public class Player extends Entity{
             right2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/character-right-2.png"));
             right3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/character-right-3.png"));
             right4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/character-right-4.png"));
+            if (hasItem) {
+                switch(mainHand) {
+                    case "Bucket":
+                        if (bucket.hasWater) {
+                            down1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-water-down-1.png"));
+                            down2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-water-down-2.png"));
+                            down3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-water-down-3.png"));
+                            down4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-water-down-4.png"));
+                        } else {
+                            down1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-down-1.png"));
+                            down2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-down-2.png"));
+                            down3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-down-3.png"));
+                            down4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-down-4.png"));
+                        }
+                        left1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-left-1.png"));
+                        left2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-left-2.png"));
+                        left3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-left-3.png"));
+                        left4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-left-4.png"));
+                        right1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-right-1.png"));
+                        right2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-right-2.png"));
+                        right3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-right-3.png"));
+                        right4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withBucket/character-bucket-right-4.png"));
+                        break;
+                    case "Pickaxe":
+                        up1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-up-1.png"));
+                        up2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-up-2.png"));
+                        up3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-up-3.png"));
+                        up4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-up-4.png"));
+                        down1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-down-1.png"));
+                        down2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-down-2.png"));
+                        down3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-down-3.png"));
+                        down4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-down-4.png"));
+                        left1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-left-1.png"));
+                        left2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-left-2.png"));
+                        left3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-left-3.png"));
+                        left4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-left-4.png"));
+                        right1 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-right-1.png"));
+                        right2 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-right-2.png"));
+                        right3 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-right-3.png"));
+                        right4 = ImageIO.read(getClass().getResourceAsStream("/res/Player/withPickaxe/character-pickaxe-right-4.png"));
+                        break;
+                    default:
+                        break;
+                }
+            }
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -71,22 +119,34 @@ public class Player extends Entity{
     public void update() {
         // Use Item's Main Function
         if (keyH.spacePressed == true) {
-            String objectName = mainHand;
-            switch(objectName) {
+            switch(mainHand) {
                 case "Bucket":
-                    OBJ_Bucket bucket = new OBJ_Bucket(); // find a way to instantiate object for whole player
                     getWater(bucket);
                     break;
                 case "Pickaxe":
                     break;
                 case "Shovel":
                     break;
+                default:        // Hands
+                    break;
+            }
+        }
+
+        // Use Item's Alt Function
+        if (keyH.enterPressed == true) {
+            switch(mainHand) {
+                case "Bucket":
+                    dropWater(bucket);
+                    break;
                 default:
                     break;
             }
         }
 
-        // TODO: Use Item's Alt Function
+        // Drop Object
+        if (keyH.gPressed == true) {
+            dropObject();
+        }
 
         if (keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true) {
             if (keyH.upPressed == true) {
@@ -145,33 +205,59 @@ public class Player extends Entity{
         }
     }
 
+    // Bucket Functions
     public void getWater(OBJ_Bucket bucket) {
-        if (hasBucket == true) {
+        if (hasItem == true) {
             if (bucket.hasWater == false && tileInFront == "water") {
                 System.out.println("Fetching Water");
                 bucket.hasWater = true;
+                getPlayerImage();
+            }
+        }
+    }
+
+    public void dropWater(OBJ_Bucket bucket) {
+        if (hasItem == true) {
+            if (bucket.hasWater == true) {
+                bucket.hasWater = false;
+                getPlayerImage();
             }
         }
     }
 
     public void pickUpObject(int index) {
-        if (index != 999) {
-            String objectName = gp.obj[index].name;
-            switch(objectName) {
-                case "Bucket":
-                    hasBucket = true;
-                    gp.obj[index] = null;
-                    mainHand = "Bucket";
-                    break;
-                case "Pickaxe":
-                    gp.obj[index] = null;
-                    break;
-                case "Shovel":
-                    gp.obj[index] = null;
-                    break;
+        // pick up item when there's no item in hand
+        if (hasItem == false) {
+            if (index != 999) {
+                String objectName = gp.obj[index].name;
+                switch(objectName) {
+                    case "Bucket":
+                        hasItem = true;
+                        gp.obj[index] = null;
+                        mainHand = "Bucket";
+                        break;
+                    case "Pickaxe":
+                        hasItem = true;
+                        gp.obj[index] = null;
+                        mainHand = "Pickaxe";
+                        break;
+                    case "Shovel":
+                        gp.obj[index] = null;
+                        break;
+                }
+                getPlayerImage();
+                hasItem = true;
             }
         }
     }
+
+    public void dropObject() {
+        gp.oSetter.setObject();
+        hasItem = false;
+        mainHand = "Hands";
+        getPlayerImage();
+    }
+
     public void draw(Graphics2D g) {
 //        g.setColor(Color.white);   // sets the color for drwaing objects
 //        g.fillRect(x, y, gp.tileSize, gp.tileSize);

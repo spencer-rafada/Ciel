@@ -79,7 +79,6 @@ public class TileManager {
             e.printStackTrace();
         }
     }
-
     public void draw(Graphics2D g) {
         int worldCol = 0;
         int worldRow = 0;
