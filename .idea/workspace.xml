@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef4a98e-ce44-4c7d-a8dc-d93babdd0037" name="Changes" comment="added collision checker">
-      <change afterPath="$PROJECT_DIR$/src/main/ObjectSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Bucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Pickaxe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Shovel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/SuperObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Objects/bucket-water.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Objects/bucket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Objects/door.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Objects/pickaxe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Objects/shovel.png" afterDir="false" />
+    <list default="true" id="9ef4a98e-ce44-4c7d-a8dc-d93babdd0037" name="Changes" comment="added objects - bucket, door, shovel, pickaxe">
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Hands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ObjectSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ObjectSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Bucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/SuperObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tile/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tile/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669571101906</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added objects - bucket, door, shovel, pickaxe">
+      <created>1669611813032</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669611813032</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +112,7 @@
     <MESSAGE value="initial commit with player assets" />
     <MESSAGE value="added world map" />
     <MESSAGE value="added collision checker" />
-    <option name="LAST_COMMIT_MESSAGE" value="added collision checker" />
+    <MESSAGE value="added objects - bucket, door, shovel, pickaxe" />
+    <option name="LAST_COMMIT_MESSAGE" value="added objects - bucket, door, shovel, pickaxe" />
   </component>
 </project>

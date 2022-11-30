@@ -2,6 +2,7 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import object.OBJ_Bucket;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,6 +16,8 @@ public class Player extends Entity{
 
     public final int screenX;
     public final int screenY;
+    boolean hasBucket = false;
+    String mainHand = "Hands";     // TODO: make a list of all materials
 
     public Player(GamePanel gp, KeyHandler keyH) {
         this.gp = gp;
@@ -26,6 +29,8 @@ public class Player extends Entity{
         solidArea = new Rectangle();
         solidArea.x = 8;
         solidArea.y = 16;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         solidArea.width = 32;
         solidArea.height = 32;
 
@@ -64,6 +69,25 @@ public class Player extends Entity{
     }
 
     public void update() {
+        // Use Item's Main Function
+        if (keyH.spacePressed == true) {
+            String objectName = mainHand;
+            switch(objectName) {
+                case "Bucket":
+                    OBJ_Bucket bucket = new OBJ_Bucket(); // find a way to instantiate object for whole player
+                    getWater(bucket);
+                    break;
+                case "Pickaxe":
+                    break;
+                case "Shovel":
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // TODO: Use Item's Alt Function
+
         if (keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true) {
             if (keyH.upPressed == true) {
                 direction = "up";
@@ -81,6 +105,10 @@ public class Player extends Entity{
             // Check tile collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
+
+            // Check object collision
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
 
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if (collisionOn == false) {
@@ -112,6 +140,35 @@ public class Player extends Entity{
                     spriteNum = 1;
                 }
                 spriteCounter = 0;
+            }
+
+        }
+    }
+
+    public void getWater(OBJ_Bucket bucket) {
+        if (hasBucket == true) {
+            if (bucket.hasWater == false && tileInFront == "water") {
+                System.out.println("Fetching Water");
+                bucket.hasWater = true;
+            }
+        }
+    }
+
+    public void pickUpObject(int index) {
+        if (index != 999) {
+            String objectName = gp.obj[index].name;
+            switch(objectName) {
+                case "Bucket":
+                    hasBucket = true;
+                    gp.obj[index] = null;
+                    mainHand = "Bucket";
+                    break;
+                case "Pickaxe":
+                    gp.obj[index] = null;
+                    break;
+                case "Shovel":
+                    gp.obj[index] = null;
+                    break;
             }
         }
     }
