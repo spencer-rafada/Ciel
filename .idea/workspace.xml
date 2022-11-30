@@ -4,43 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ef4a98e-ce44-4c7d-a8dc-d93babdd0037" name="Changes" comment="added functionality to bucket obj">
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-down-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-down-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-down-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-down-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-left-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-left-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-left-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-left-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-right-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-right-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-right-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-right-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-water-down-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-water-down-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-water-down-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withBucket/character-bucket-water-down-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-down-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-down-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-down-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-down-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-left-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-left-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-left-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-left-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-right-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-right-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-right-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-right-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-up-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-up-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-up-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/Player/withPickaxe/character-pickaxe-up-4.png" afterDir="false" />
+    <list default="true" id="9ef4a98e-ce44-4c7d-a8dc-d93babdd0037" name="Changes" comment="added pickaxe asset">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tile/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669829153019</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added pickaxe asset">
+      <created>1669836793009</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669836793009</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +121,7 @@
     <MESSAGE value="added collision checker" />
     <MESSAGE value="added objects - bucket, door, shovel, pickaxe" />
     <MESSAGE value="added functionality to bucket obj" />
-    <option name="LAST_COMMIT_MESSAGE" value="added functionality to bucket obj" />
+    <MESSAGE value="added pickaxe asset" />
+    <option name="LAST_COMMIT_MESSAGE" value="added pickaxe asset" />
   </component>
 </project>
