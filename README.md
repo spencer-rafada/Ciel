@@ -14,13 +14,10 @@ The purpose for writing this software is to learn Java, OOP, and 2D Game Develop
 code here came from a [tutorial](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq). However,
 I added unique objects different from the tutorial which furthered my knowledge in OOP.
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}
-
-[Ciel Dev Log#1](http://youtube.link.goes.here)
+[Ciel Dev Log#1](https://youtu.be/43kW5n1ARpU)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
 - **IntelliJ IDEA CE** - Integrated Development Environment
 - **Java** - programming language
   - *a couple of built-in Java libraries*
@@ -29,7 +26,7 @@ I added unique objects different from the tutorial which furthered my knowledge 
 
 # Useful Websites
 
-* [RyiSnow's Game Development from Scratch Tutorial](https://www.piskelapp.com/)
+* [RyiSnow's Game Development from Scratch Tutorial](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq
 * [IntelliJ installation](https://www.jetbrains.com/help/idea/installation-guide.html)
 * [Asset Analysis](https://www.jetbrains.com/help/idea/installation-guide.html)
 
